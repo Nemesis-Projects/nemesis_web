@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>CouponNext - Available Coupons</title>
+
+    <!--/*/ <th:block th:include="fragments/header :: head"></th:block> /*/-->
+</head>
+<body>
+
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/nav :: navigation"></th:block> /*/-->
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Active Coupons</div>
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th> CODE </th>
+                <th> NUMBER OF REDEMPTION'S</th>
+                <th> EXPIRES ON</th>
+                <th> MAX NUMBER OF REDEMPTION'S</th>
+            </tr>
+            <tr th:each="coupon : ${coupons}">
+                <td th:text="${coupon.code}"></td>
+                <td th:text="${coupon.redemptions}"></td>
+                <td th:text="${coupon.endDate}"></td>
+                <td th:text="${coupon.maxRedemptions}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
